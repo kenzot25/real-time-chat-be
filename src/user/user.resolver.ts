@@ -1,5 +1,4 @@
 import { Args, Context, Mutation, Resolver } from '@nestjs/graphql';
-import { UserService } from './user.service';
 import { UseGuards } from '@nestjs/common';
 import { GraphqlAuthGuard } from 'src/auth/guards/graphql-auth.guard';
 import { User } from './types';
@@ -8,6 +7,7 @@ import { Request } from 'express';
 import { v4 as uuidv4 } from 'uuid';
 import { join } from 'path';
 import { createWriteStream } from 'fs';
+import { UserService } from './user.service';
 
 @Resolver()
 export class UserResolver {
